@@ -15,7 +15,8 @@ if uploaded_file:
     image = cv2.imdecode(file_bytes, 1)
     image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    st.image(image_rgb, caption="🖼️ Uploaded Image", use_column_width=True)
+    st.image(image_rgb, caption="🖼️ Uploaded Image", use_container_width=True)
+
 
     mp_face_detection = mp.solutions.face_detection
     with mp_face_detection.FaceDetection(model_selection=0, min_detection_confidence=0.6) as face_detection:
